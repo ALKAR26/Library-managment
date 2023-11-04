@@ -1,13 +1,20 @@
 # Library Management System (Group 2)
 Team Members
+
 Group Leader: Suraj Singh
+
 Dhruv
+
 Ashlee
+
 Kushagra
+
 Vaibhav
+
 Ritesh
+
 Ishan
-Project Overview
+* Project Overview
 This README file provides an overview of the Library Management System project developed by Group 2. The project was executed using the Kanban Agile methodology, with tasks distributed among team members based on their respective expertise.
 
 Project Objective
