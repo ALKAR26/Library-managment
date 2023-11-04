@@ -3,17 +3,17 @@
 
 Group Leader: Suraj Singh
 
-Dhruv
+* Dhruv
 
-Ashlee
+* Ashlee
 
-Kushagra
+* Kushagra
 
-Vaibhav
+* Vaibhav
 
-Ritesh
+* Ritesh
 
-Ishan
+* Ishan
 
 # Project Overview
   
