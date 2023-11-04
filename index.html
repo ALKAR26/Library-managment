@@ -1,34 +1,34 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Library Management System</title>
-    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" href="styles.css"> <!-- You should create a separate CSS file for styling -->
 </head>
 <body>
-    <h1>Library Management System</h1>
-    
-    <div class="container" id="login-container">
-        <h2>User Login</h2>
-        <form id="login-form">
-            <label for="username">Username:</label>
-            <input type="text" id="username" required>
-            <label for="password">Password:</label>
-            <input type="password" id="password" required>
-            <button type="submit">Login</button>
-        </form>
-    </div>
+    <header>
+        <h1>Library Management System</h1>
+    </header>
 
-    <div class="container" id="library-container" style="display: none;">
-        <h2>Add a Book</h2>
-        <form id="add-book-form">
-            <!-- ... Book input fields as in the previous example ... -->
-        </form>
+    <nav>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Catalog</a></li>
+            <li><a href="#">Members</a></li>
+            <li><a href="#">Check Out</a></li>
+            <li><a href="#">Check In</a></li>
+            <li><a href="#">Reports</a></li>
+        </ul>
+    </nav>
 
-        <h2>Library Catalog</h2>
-        <input type="text" id="search" placeholder="Search by Title or Author">
-        <ul id="book-list"></ul>
-    </div>
+    <section id="content">
+        <!-- This is where the content of your pages will be displayed -->
+        <!-- Depending on the page, you may have different content here -->
+    </section>
 
-    <script src="script.js"></script>
+    <footer>
+        &copy; 2023 Library Management System
+    </footer>
 </body>
 </html>
