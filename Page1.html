@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f2f2f2;
+        }
+
+        #header {
+            background-color: #333;
+            color: white;
+            padding: 10px;
+            text-align: center;
+        }
+
+        #search-bar {
+            background-color: #ddd;
+            padding: 10px;
+            text-align: center;
+        }
+
+        #book-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            padding: 20px;
+        }
+
+        .book-box {
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            margin: 10px;
+            padding: 10px;
+            width: 200px;
+            text-align: center;
+        }
+
+        #user-info {
+            position: fixed;
+            top: 0;
+            right: 0;
+            background-color: #333;
+            color: white;
+            padding: 10px;
+            text-align: right;
+        }
+    </style>
+    <title>Group 2 Library Management System</title>
+</head>
+<body>
+
+    <div id="header">
+        <h1>Group 2 Library Management System</h1>
+    </div>
+
+    <div id="search-bar">
+        <input type="text" placeholder="Search Book" style="padding: 5px;">
+    </div>
+
+    <div id="book-container">
+        <!-- Example Book Box -->
+        <div class="book-box">
+            <img src="book1.jpg" alt="Book 1">
+            <h3>Book Title 1</h3>
+        </div>
+
+        <!-- Add more book boxes as needed -->
+
+    </div>
+
+    <div id="user-info">
+        <p>User Info: John Doe</p>
+        <p>Borrowed Books: 3</p>
+    </div>
+
+</body>
+</html>
