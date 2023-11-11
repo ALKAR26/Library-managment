@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Profile</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        #container {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        #user-details {
+            flex: 1;
+            margin-right: 20px;
+        }
+
+        #user-photo {
+            width: 100px; /* Adjust the size as needed */
+            height: 100px; /* Adjust the size as needed */
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        #user-info {
+            margin-top: 10px;
+        }
+
+        #borrowed-books {
+            flex: 1;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="container">
+        <div id="user-details">
+            <img src="user-photo.jpg" alt="User Photo" id="user-photo">
+            <div id="user-info">
+                <p><strong>User Name:</strong> John Doe</p>
+                <p><strong>Mobile Number:</strong> +1 123-456-7890</p>
+                <p><strong>Address:</strong> 123 Main Street, Cityville</p>
+            </div>
+        </div>
+
+        <div id="borrowed-books">
+            <h2>Borrowed Books</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Book Title</th>
+                        <th>Date Borrowed</th>
+                        <th>Due Date</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Book 1</td>
+                        <td>2023-11-11</td>
+                        <td>2023-12-01</td>
+                    </tr>
+                    <tr>
+                        <td>Book 2</td>
+                        <td>2023-11-12</td>
+                        <td>2023-12-02</td>
+                    </tr>
+                    <!-- Add more rows as needed -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+</body>
+</html>
