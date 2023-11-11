@@ -13,13 +13,12 @@
 
         #container {
             display: flex;
-            justify-content: space-between;
-            flex-wrap: wrap;
+            flex-direction: column;
         }
 
         #user-details {
-            flex: 1;
-            margin-right: 20px;
+            display: flex;
+            margin-bottom: 20px;
         }
 
         #user-photo {
@@ -27,35 +26,24 @@
             height: 100px; /* Adjust the size as needed */
             border-radius: 50%;
             object-fit: cover;
+            margin-right: 20px;
         }
 
         #user-info {
-            margin-top: 10px;
-        }
-
-        #borrowed-books {
             flex: 1;
         }
 
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 20px;
+        #user-info p {
+            margin: 5px 0;
         }
 
-        th, td {
+        #manual-box {
             border: 1px solid #ddd;
-            padding: 8px;
-            text-align: left;
-        }
-
-        th {
-            background-color: #f2f2f2;
+            padding: 10px;
+            margin-bottom: 20px;
         }
 
         #action-boxes {
-            flex: 1;
-            margin-top: 20px;
             text-align: right;
         }
 
@@ -94,30 +82,9 @@
             </div>
         </div>
 
-        <div id="borrowed-books">
-            <h2>Borrowed Books</h2>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Book Title</th>
-                        <th>Date Borrowed</th>
-                        <th>Due Date</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Book 1</td>
-                        <td>2023-11-11</td>
-                        <td>2023-12-01</td>
-                    </tr>
-                    <tr>
-                        <td>Book 2</td>
-                        <td>2023-11-12</td>
-                        <td>2023-12-02</td>
-                    </tr>
-                    <!-- Add more rows as needed -->
-                </tbody>
-            </table>
+        <div id="manual-box">
+            <h2>User Manual</h2>
+            <p>This is the user manual box. You can provide instructions or any other relevant information here.</p>
         </div>
 
         <div id="action-boxes">
