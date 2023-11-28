@@ -15,7 +15,13 @@ urlpatterns = [
     path('signup', views.signup, name='signup'),
     
     path('logout', user_logout, name='logout'),
-   
+
+    path('home', views.home, name='home'),
+   path('books/', views.book_list, name='book_list'),
+    path('books/search/', views.search_books, name='search_books'),
+
+
+    path('books/issue/<int:book_id>/', views.issue_book, name='issue_book'),
  path('book_list', views.book_list, name='books'),
 ]
 

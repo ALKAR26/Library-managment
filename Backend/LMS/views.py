@@ -10,10 +10,34 @@ User = get_user_model()
 from django.shortcuts import render
 from .models import Book
 
+from django.shortcuts import render
+from .models import Book
+
 def book_list(request):
     books = Book.objects.all()
     return render(request, 'book_list.html', {'books': books})
 
+from django.http import JsonResponse
+
+def search_books(request):
+    query = request.GET.get('q', '')
+    books = Book.objects.filter(title__icontains=query)
+
+    book_list = []
+    for book in books:
+        book_list.append({
+            'title': book.title,
+            'author': book.author,
+            'publication_date': book.publication_date,
+            'description': book.description,
+        })
+
+    return JsonResponse({'books': book_list})
+
+def issue_book(request, book_id):
+    book = Book.objects.get(pk=book_id)
+    IssuedBook.objects.create(user=request.user, book=book)
+    return redirect('book_list')
 
 # Create your views here.
 def Welcome (request):
