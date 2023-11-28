@@ -1,52 +1,149 @@
 {% extends "base.html" %}
 {% load static %}
+
 {% block title %}
 Book List
 {% endblock title %}
 
 {% block stylesheet %}
-href="{% static 'css/books.css' %}"
+<link rel="stylesheet" type="text/css" href="{% static 'css/books.css' %}">
+<style>
+    /* Add your custom CSS styles here */
+    #search-form {
+        text-align: right;
+        margin-bottom: 10px;
+    }
+
+    #search-input {
+        padding: 5px;
+        width: 200px;
+    }
+
+    #search-button {
+        padding: 5px 10px;
+        background-color: #4CAF50; /* Green */
+        color: white;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+
+    #search-button:hover {
+        background-color: #45a049;
+    }
+
+    #issue-button {
+        padding: 5px 10px;
+        background-color: #008CBA; /* Blue */
+        color: white;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        text-decoration: none;
+    }
+
+    #issue-button:hover {
+        background-color: #006080;
+    }
+</style>
 {% endblock stylesheet %}
 
-
-
 {% block body %}
-
 <div class="container">
-    
     <div id="container">
         <div id="user-details">
             <!-- User details go here -->
         </div>
-        
+
+        <!-- Search Form -->
+        <div id="search-form">
+            <form id="search-form" method="GET" action="{% url 'search_books' %}">
+                <input type="text" name="q" id="search-input" placeholder="Search Books">
+                <button type="submit" id="search-button">Search</button>
+            </form>
+        </div>
+
         <div id="borrowed-books">
             <h2>Book List</h2>
-            <table>
-            <thead>
-                <tr>
-                    <th>Book Title</th>
-                    <th>Author</th>
-                    <th>Publication Date</th>
-                    <th>Description</th>
-                    <th>Action</th>
-                </tr>
-            </thead>
-            <tbody>
-                {% for book in books %}
-                <tr>
-                    <td>{{ book.title }}</td>
-                    <td>{{ book.author }}</td>
-                    <td>{{ book.publication_date }}</td>
-                    <td>{{ book.description }}</td>
-                    <td><a href="/">Purchase</a></td>
-                  </tr>
-                {% endfor %}
-            </tbody>
-        </table>
+            <table id="book-table">
+                <thead>
+                    <tr>
+                        <th>Book Title</th>
+                        <th>Author</th>
+                        <th>Publication Date</th>
+                        <th>Description</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody id="book-table-body">
+                    {% for book in books %}
+                    <tr>
+                        <td>{{ book.title }}</td>
+                        <td>{{ book.author }}</td>
+                        <td>{{ book.publication_date }}</td>
+                        <td>{{ book.description }}</td>
+                        <td><a href="#" id="issue-button" data-book-id="{{ book.id }}">Issue</a></td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
     </div>
 </div>
 
-</div>
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+<script>
+    $(document).ready(function () {
+        $('#search-form').submit(function (e) {
+            e.preventDefault();
+            var query = $('#search-input').val();
+            $.ajax({
+                url: '{% url "search_books" %}',
+                data: { 'q': query },
+                dataType: 'json',
+                success: function (data) {
+                    updateTable(data.books);
+                }
+            });
+        });
+
+        // Add a click event handler for the "Issue" button
+        $('#book-table-body').on('click', '#issue-button', function (e) {
+            e.preventDefault();
+            var bookId = $(this).attr('data-book-id');
+            issueBook(bookId);
+        });
+
+        function issueBook(bookId) {
+            $.ajax({
+                url: '{% url "issue_book" 0 %}'.replace('0', bookId),
+                method: 'POST',
+                dataType: 'json',
+                success: function (data) {
+                    // Handle success if needed
+                    console.log('Book issued successfully');
+                },
+                error: function (error) {
+                    // Handle error if needed
+                    console.error('Error issuing book:', error);
+                }
+            });
+        }
+
+        function updateTable(books) {
+            var tableBody = $('#book-table-body');
+            tableBody.empty();
+
+            for (var i = 0; i < books.length; i++) {
+                var row = $('<tr>');
+                row.append($('<td>').text(books[i].title));
+                row.append($('<td>').text(books[i].author));
+                row.append($('<td>').text(books[i].publication_date));
+                row.append($('<td>').text(books[i].description));
+                row.append($('<td>').html('<a href="#" id="issue-button" data-book-id="' + books[i].id + '">Issue</a>'));
+                tableBody.append(row);
+            }
+        }
+    });
+</script>
 {% endblock body %}
-
-
