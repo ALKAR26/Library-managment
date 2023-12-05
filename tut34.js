@@ -10,7 +10,12 @@ user_credentials = {
 
 # Mock state data with district-wise house prices
 state_data = {
-    
+      "Andhra Pradesh": {
+        "Amaravati": "₹90,00,000",
+        "Visakhapatnam": "₹85,00,000",
+        "Vijayawada": "₹82,00,000",
+        "Guntur": "₹78,00,000",
+        "Nellore": "₹72,00,000",
     },
     "Arunachal Pradesh": {
         "Itanagar": "₹68,00,000",
