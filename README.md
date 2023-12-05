@@ -7,7 +7,7 @@ Group Leader: Suraj Singh
 
 * Ashlee
 
-* 
+* Kushagra 
 
 * Vaibhav
 
