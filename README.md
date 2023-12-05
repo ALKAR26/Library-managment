@@ -67,4 +67,4 @@ Ensured smooth interaction between users and the system.
 
 # Agile Methodology
 
-The project was managed using the Kanban Agile methodology. This approach allowed the team to prioritize and visualize tasks on a Kanban board, making it easy to track progress and adjust priorities as needed. Kanban Agile principles, including continuous improvement and incremental delivery, were integral to the success of the project.
+The project was managed using the kanban agile methodology. This approach allowed the team to prioritize and visualize tasks on a Kanban board, making it easy to track progress and adjust priorities as needed. Kanban Agile principles, including continuous improvement and incremental delivery, were integral to the success of the project.
