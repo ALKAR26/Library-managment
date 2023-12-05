@@ -1,7 +1,4 @@
-document.addEventListener("DOMContentLoaded", function () {
-    const addBookForm = document.getElementById("add-book-form");
-    const bookList = document.getElementById("book-list");
-    const searchInput = document.getElementById("search");
+
 
     addBookForm.addEventListener("submit", function (e) {
         e.preventDefault();
